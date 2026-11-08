@@ -1,0 +1,46 @@
+{
+  "name": "playwright-api-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "REST API automation framework built with Playwright Test, TypeScript, and JSON Schema validation.",
+  "license": "MIT",
+  "author": "Hassan Mehmood (https://github.com/hassanmehmoodd)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hassanmehmoodd/playwright-api-automation.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:auth": "playwright test --grep @auth",
+    "test:negative": "playwright test --grep @negative",
+    "test:chain": "playwright test --grep @chain",
+    "test:data": "playwright test --grep @data-driven",
+    "test:booker": "playwright test --grep @booker",
+    "test:dummyjson": "playwright test --grep @dummyjson",
+    "test:jsonplaceholder": "playwright test --grep @jsonplaceholder",
+    "report": "playwright show-report",
+    "report:sample": "node scripts/render-sample-report.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "dotenv": "^18.0.9",
+    "eslint": "^10.14.0",
+    "eslint-plugin-playwright": "^2.12.2",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
