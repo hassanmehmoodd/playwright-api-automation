@@ -1,0 +1,18 @@
+{
+  "$id": "https://schemas.local/dummyjson/product-list.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProductList",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["products", "total", "skip", "limit"],
+  "properties": {
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "https://schemas.local/dummyjson/product.schema.json" }
+    },
+    "total": { "type": "integer", "minimum": 1 },
+    "skip": { "type": "integer", "minimum": 0 },
+    "limit": { "type": "integer", "minimum": 1 }
+  }
+}
